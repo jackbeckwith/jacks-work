@@ -1,28 +1,5 @@
-== README
+Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I encountered a few problems during homework #1. I got stuck for a little bit when dealing with SSH Keys. Once Jenny gave me some guidance, I was able to generate a new key on my local machine and record it on my GitHub account. I then used the command heroku keys:add to link the new key to my Heroku account.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I also struggled somewhat when I was trying to switch from running sqlite to postgresql for Heroku's purposes.I tried at first to adjust it from the command line, not realizing that I had to change the "Gemfile." Once I downloaded Sublime Text 2 and opened the file however, the editing was a quick copy and paste from the PowerPoint.
