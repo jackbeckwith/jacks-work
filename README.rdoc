@@ -1,4 +1,4 @@
-Link to my Heroku page:
+Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
 This week I built Google's homepage using HTML and CSS. I separated the HTML code into three main sections: the navigation bar that includes five icons at the top-right of the page; the main content, which includes Google's logo and search box; and the footer at the bottom of the page that provides links to more information about Google's services. As a first-time coder in HTML and CSS, I encountered a few problems along the way:
 
