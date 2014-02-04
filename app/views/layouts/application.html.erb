@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MySite</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+  		<title>Google Homepage</title>
+  			<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+ 			<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  			<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="navbar">
+			<ul class="nav">
+				<li id="sign-in" class="nav-link">
+					<form action="https://accounts.google.com/ServiceLogin?hl=en&continue=https://www.google.com/">
+						<input type="submit" value="Sign in">
+					</form>
+				</li>
+				<li id="apps" class="nav-link">
+					<%= image_tag "app-boxes.png"%>
+				</li>
+				<div id="text-link">
+					<li><a class="nav-link" href="https://www.google.com/imghp?hl=en&tab=wi&ei=bAPvUuyAJ4HLsASPzoHIAQ&ved=0CAQQqi4oAg">Images</a></li>	
+					<li><a class="nav-link" href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/?tab%3Dwm&scc=1&ltmpl=default&ltmplcache=2&emr=1">Gmail</a></li>
+					<li><a class="nav-link" href="https://accounts.google.com/ServiceLogin?service=oz&passive=1209600&continue=https://plus.google.com/?gpsrc%3Dogpy0%26tab%3DwX%26partnerid%3Dogpy0">+You</a></li>
+				</div>
+			</ul>
+		</div>
+		<%= yield %>
+		<div class="footer">
+			<ul class="foot">
+				<div id="left-side">
+					<li><a class="foot-link" href="https://www.google.com/intl/en/ads/?fg=1">Advertising</a></li>
+					<li><a class="foot-link" href="https://www.google.com/services/?fg=1">Business</a></li>
+					<li><a class="foot-link" href="https://www.google.com/intl/en/about/">About</a></li>
+				</div>
+				<div id="right-side">
+					<li><a class="foot-link" href="https://www.google.com/intl/en/policies/?fg=1">Privacy & Terms</a></li>
+					<li class="foot-link">Settings</li>
+				</div>
+			</ul>
+		</div>
+	</body>
 </html>
