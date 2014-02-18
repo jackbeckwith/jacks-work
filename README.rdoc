@@ -1,22 +1,5 @@
 Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
-This week I built Google's homepage using HTML and CSS. I separated the HTML code into three main sections: the navigation bar that includes five icons at the top-right of the page; the main content, which includes Google's logo and search box; and the footer at the bottom of the page that provides links to more information about Google's services. As a first-time coder in HTML and CSS, I encountered a few problems along the way:
+I've decided to pursue an app that will allow rappers and producers to connect on a social media type site. As a first step I created two tables - one for users and the other for the songs they will upload. I used a one-to-many structure, i.e. a given user can upload as many songs as they wish. To that end, I associated each song with a particular user by using "belong_to," just as Jenny did in class. For now I just have four ugly links on my home page and some remnants of HW #2 where we recreated Google's search page. As time progresses I'll add iterations and prettier styling. 
 
-I had trouble getting the "Sign in" button at the top right to work properly. At first I struggled to get the button to take on its blue color and proper dimensions; with Jenny's help, I found that the part of my application.css.scss file pertaining to the sign in button was missing "input" prior to bracket i.e.
-
-#sign-in input{
-	width: ….
-	height: ….
-}	
-
-I also found it hard to link the button to the proper place. Surveying Stackoverflow, I discovered that I could use the <form> tag and set the action to be the proper url.
-
-I was also stumped for a little bit while trying to format my content section. I would continually update my home.css.scss file, only to find that the changes didn't appear on my localhost:3000 site. Eventually, Jenny suggested that I just work out of my application.css.scss file even for the main search content. That seemed to solve the problem.
-
-Here are three ideas for my final project:
-
-1. Rap And Meet: Today, rap stands as one of the most popular genres of music and an integral part of our culture. Websites catering to the hip-hop community abound. Many rap blogs -- like hotnewhiphop.com, thissongissick.com, etc -- focus exclusively on publicizing the newest releases from already established artists for their readers' listening pleasure. Other websites like Soundcloud allow anyone to post their own original material, no matter how anonymous they may be. Still other sites like RapGenius break down the lyrics of high profile songs, allowing users to decode the metaphors and wordplay so common in hip-hop.  However, all these websites are built to distribute/interpret a finished product -- a recorded and mixed rap song. Rap and Meet would be a social network meant to pair the different parties integral to making any rap song great: the rapper and the producer. Often low-profile rappers have difficulty finding anyone to produce their beats, and vice versa. This website would solve that problem by allowing rappers and producers to put up samplings of their work for the sole purpose of collaborating with others on the site.
-
-2. Grocery+: Today, people often visit the grocery store blindly, taking the prices listed in their local supermarket without question. What if there was a website that allowed you to compare the prices of items on your grocery list at all the grocery stores within a certain radius? That's exactly what Grocery+ would seek to do. Partnering with chain supermarkets, prices on all commodities in a given store would be regularly updated on the site. Then the user could input a grocery store list and maximum driving distance. Grocery+ would tabulate the prices of all the items on that list and give a recommended store to maximize savings. Coming features might include coupon calculations, delivery options, etc.
-
-3. Get Thrifty: Being hipster is all the rage these days. Suddenly shopping at thrift stores for sweaters and other fashionable items is a hobby among much of the younger generation in their teens and early twenties. But we want to make that shopping process more convenient. We're taking thrift shopping online. Instead of making you trek from store to store in search of unique items, we'll amass a list of the inventory located at thrift stores near you. You'll be able to either make a single trip to find the sweater of your dreams, or even better, have it shipped directly to your door. 
+I didn't have too many problems with this one. A few styling errors - like when I omitted the <%end%> on both of my view/index pages - stumped me for a while, but things worked out fine. Looking forward to hammering out the details of my app in the coming weeks! 

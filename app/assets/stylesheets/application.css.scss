@@ -1,5 +1,5 @@
 body{
-	background-color: rgb(255,255,255);
+	background-color: rgb(240,255,255);
 	font-family: arial,sans-serif;
 	font-size: 13px;
 	line-height: 24px;
@@ -28,7 +28,7 @@ li{
 	padding-bottom: 14px;
 	text-decoration: none;
 	color: #404040;
-	float: right;
+	float: left;
 }
 
 #sign-in input{
@@ -149,4 +149,8 @@ li{
 	margin-bottom: 16px;
 }
 
+#content {
+	position: absolute;
+	top: 100px;
+}
 
