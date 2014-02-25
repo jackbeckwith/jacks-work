@@ -1,14 +1,19 @@
 <table> 
 	<tr>
-		<td>title</td> 
-		<td>genre</td> 
-		<td>user_name</td>
+		<td>Title</td> 
+		<td>Genre</td> 
+		<td>User</td>
+		<td>Edit Song Info</td>
+		<td>Delete Song</td>
 	</tr>
 	<% @songs.each do |song| %> 
 	<tr>
-		<td><%= song.title %></td>
+		<td><%= link_to song.title, song_path(song.id) %></td>
 		<td><%= song.genre %></td> 
-		<td><%= song.user.name %> </td>
+		<td><%= song.user.name %></td>
+		<td><%= link_to "Edit Song", edit_song_path(song.id) %> </td>
+		<td><%= link_to "Destroy Song", song, confirm: "Are you sure you want to delete this song?", method: :delete %> 
+</td>
 	</tr>
 	<%end%> 
 </table>
