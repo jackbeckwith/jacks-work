@@ -1,7 +1,9 @@
 MySite::Application.routes.draw do
+  devise_for :users
   root "home#index"
-  resources :users
   resources :songs
+  resources :users, only: [:index]
+  get '/users/show/:id', to: 'users#show', as: 'user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

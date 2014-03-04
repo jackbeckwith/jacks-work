@@ -1,4 +1,19 @@
-<%=link_to "Create New User", new_user_path%>
-<%=link_to "View All Users", users_path%>
-<%=link_to "Upload New Song", new_song_path%>
-<%=link_to "View all Songs", songs_path%>
+<div class="content">
+	<div class="logo">
+		<%= image_tag "googleLogo.png"%>
+	</div>
+	<div class="search-box">
+		<form action="#" method="POST">
+			<ul>
+				<li>
+					<input type="text">
+				</li>
+				<li id="search-buttons">
+					<input id="google" type="submit" value="Google Search">
+					<span></span>
+					<input id="lucky" type="submit" value="I'm Feeling Lucky">
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>

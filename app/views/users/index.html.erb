@@ -11,7 +11,7 @@
 		<td><%= link_to user.name, user_path(user.id) %></td>
 		<td><%= user.email %></td>
 		<td><%= user.password %></td>
-		<td><%= link_to "Edit User", edit_user_path(user.id) %></td>
+		<td><%= link_to "Edit User", edit_user_registration_path(user.id) %></td>
 		<td><%= link_to "Destroy User", user, confirm: "Are you sure you want to delete this user?", method: :delete %></td>
 	</tr>
 	<%end%>

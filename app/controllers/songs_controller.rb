@@ -4,15 +4,23 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    if user_signed_in?
+      @song = Song.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @song = Song.new(songs_params)
-    if @song.save
-      redirect_to songs_path
+    if @song.user_id != current_user.id
+      redirect_to root_path
     else
-      render "new"
+      if @song.save
+        redirect_to songs_path
+      else
+        render 'new'
+      end
     end
   end
 
@@ -26,10 +34,14 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find(params[:id])
-    if @song.update_attributes(songs_params)
-      redirect_to song_path(@song.id)
+    if @song.user_id != current_user.id
+      render 'edit'
     else
-      render "edit"
+      if @song.update_attributes(songs_params)
+        redirect_to song_path(@song.id)
+      else
+        render "edit"
+      end
     end
   end
 
