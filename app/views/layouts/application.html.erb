@@ -10,19 +10,19 @@
 		<div class="navbar">
 			<ul class="nav">
 				<% if user_signed_in? %>
-				<li>
-					<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-				</li>
+					<li><a id="logout">
+						<%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
+					</a></li>
 				<% else %>
-				<li>
-					<%= link_to("Login", new_user_session_path) %>
-				</li>
+					<li><a id="login">
+						<%= link_to("Login", new_user_session_path) %>
+					</a></li>
 				<% end %>
-				<div id="text-link">
-					<li><a class="nav-link"><%=link_to "Create New User", new_user_registration_path %></a></li>	
-					<li><a class="nav-link"> <%=link_to "View All Users", users_path%></a></li>
-					<li><a class="nav-link"><%=link_to "Upload New Song", new_song_path%></a></li>
-					<li><a class="nav-link"><%=link_to "View all Songs", songs_path%></a></li>
+				<div class="text-link">
+					<li><%=link_to "Create New User", new_user_registration_path %></li>	
+					<li><%=link_to "View All Users", users_path%></li>
+					<li><%=link_to "Upload New Song", new_song_path%></li>
+					<li><%=link_to "View all Songs", songs_path%></li>
 				</div>
 			</ul>
 		</div>

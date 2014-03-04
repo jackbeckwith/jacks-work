@@ -23,9 +23,6 @@ li{
 	background-color: rgb(102,153,204);
 	margin-left: -8px;
 	margin-top: -8px;
-}
-
-.nav-link{
 	padding: 7.5px;
 	padding-top: 20px;
 	padding-bottom: 14px;
@@ -34,34 +31,13 @@ li{
 	float: left;
 }
 
-#sign-in input{
-	width: 71px;
-	height: 30px;
-	color: white;
-	font-family: arial,sans-serif;
-	font-weight: bold;
-	font-size: 13px;
-	background-image: -webkit-linear-gradient(top, rgb(67, 135, 253), rgb(70, 131, 234));
-	border: 1px;
-	border-color: #4285f4;
-	border-radius: 2px;
-	margin-top: -5px;
-	margin-right: 31px;
-}
-
-#apps {
-	width: 30px;
-	height: 30px;
-	margin-top: 2px;
-	margin-left: 4px;
-	margin-right: -4px;
-}
-
-#text-link a{
+.text-link a{
 	text-decoration: none;
+	color: #F0F8FF;
+	padding: 10px;
 }
 
-#text-link a:hover{
+.text-link a:hover{
 	text-decoration: underline;
 }
 
@@ -71,53 +47,13 @@ li{
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 10px;
-	top: 60px;
+	top: 20px;
 }
 
 .content a{
 	text-decoration: none;
 	color: #000;
-	font-size: 11px;
-}
-
-.logo{
-	width: 269px;
-	height: 95px;
-	padding-top: 114px;
-	padding-left: 152px;
-}
-
-.content input{
-	font-size: 13px;
-	width: 566px;
-	height: 24px;
-	margin-top: 23px; 
-}
-
-#google{
-	width: 96px;
-	height: 29px;
-	margin-left: 175px;
-	margin-right: 12px;
-}
-
-#lucky{
-	width: 111px;
-	height: 29px;
-}
-
-#search-buttons input{
-	color: #222;
-	font-family: arial,sans-serif;
-	font-weight: bold;
-	font-size: 11px;
-	background-image: -webkit-linear-gradient(top, rgb(245, 245, 245), rgb(241, 241, 241));
-	border: 1px;
-	border-style: solid;
-	border-color: #dcdcdc;
-	border-radius: 4px;
-	margin-top: 16px;
-	margin-bottom: 16px;
+	font-size: 20px;
 }
 
 #content {
