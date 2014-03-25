@@ -17,6 +17,7 @@ class SongsController < ApplicationController
       redirect_to root_path
     else
       if @song.save
+        Notifications.new_song(@song).deliver
         redirect_to songs_path
       else
         render 'new'

@@ -5,11 +5,12 @@ gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 group :development do
- 				gem 'sqlite3'
- 		end
- 		group :production do
- 				gem 'pg'
- 		end
+ 	gem 'sqlite3'
+end
+ 		
+group :production do
+ 	gem 'pg'
+end
 
 
 # Use SCSS for stylesheets
@@ -36,9 +37,16 @@ gem 'jbuilder', '~> 1.2'
 # Enable authentification of users
 gem 'devise', '3.0'
 
+gem 'aws-s3', :require => 'aws/s3'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+    gem 'sdoc', require: false
+end
+
+#install gem 'letter_opener' so emails sent via SendGrid will open in separate window
+group :development do
+	gem 'letter_opener', github: 'ryanb/letter_opener'
 end
 
 # Use ActiveModel has_secure_password

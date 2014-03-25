@@ -1,6 +1,6 @@
 Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
-This week I add 4 validations to my app. When a user signs up or edits his existing info, my app now ensures that the user provides a name (using the the presence validation) and a password that includes at least one digit (with the format validation). I also implemented two validations on the songs attributed to each user. I added a maximum length limit to the name of a given song (via the length validation) and ensured a genre was specified for each song with the presence validation. 
+This week I added a Heroku Addon to my app - SendGrid. Now when a user uploads a new song, he receives an email confirming that the track was saved. The email also contains a link which, when clicked, routes the user to the song's page with all its details. I plan to also implement another AddOn called PandaStream, in order to enable users to upload videos to their account.
 
-I tried styling my own error messages for each of the validations but ran into some trouble. I followed advice posted on StackOverflow but continued to have problems in the local version of my app, repeatedly getting a "MessageValidator" error. I think these issues were caused by the fact that we implemented the devise gem last week but I'm still not 100% sure. In any case, I reverted back to the preset error messages to avoid any trouble.
+I struggled slightly making the link work that takes the user from the confirmation email to the new song page. I talked to Jenny, and she suggested that I distance the period from the link by one space. That seemed to solve things.
 
