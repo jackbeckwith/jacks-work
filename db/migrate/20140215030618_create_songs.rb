@@ -3,7 +3,6 @@ class CreateSongs < ActiveRecord::Migration
     create_table :songs do |t|
       t.string :title
       t.string :genre
-      t.integer :duration
       t.integer :favorites
       t.belongs_to :user, index: true
 

@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301013244) do
+ActiveRecord::Schema.define(version: 20140325033156) do
 
-  create_table "songs", force: true do |t|
-    t.string   "title"
-    t.string   "genre"
-    t.integer  "duration"
-    t.integer  "favorites"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "songs", ["user_id"], name: "index_songs_on_user_id"
+# Could not dump table "songs" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: true do |t|
     t.string   "name"
