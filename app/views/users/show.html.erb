@@ -1,5 +1,10 @@
 <div>
 	<h2><%= @user.name %></h2>
-	<p><%= @user.email %></p>
-	<p><%= @user.password %></p>
+	<h3><%= @user.email %></h3>
+	<h3><%= "Songs" %></h3>
+	<% @songs.each do |song| %>
+		<div class="dash-review">
+			<p><%= link_to song.title, song_path(song.id) %></p>
+		</div>
+	<%end%>
 </div>	

@@ -6,6 +6,7 @@
 		<td>Edit User Info</td>
 		<td>Delete User</td>
 	</tr>
+	<% @users = (current_user.blank? ? User.all : User.find(:all, :conditions => ["id != ?", current_user.id])) %>
 	<% @users.each do |user| %>
 	<tr>
 		<td><%= link_to user.name, user_path(user.id) %></td>
@@ -13,6 +14,33 @@
 		<td><%= user.password %></td>
 		<td><%= link_to "Edit User", edit_user_registration_path(user.id) %></td>
 		<td><%= link_to "Destroy User", user, confirm: "Are you sure you want to delete this user?", method: :delete %></td>
-	</tr>
+		<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %>
+			<td>
+				<%= form_for(Follower.new) do |f| %>
+					<div class="field">
+						<%= f.hidden_field :follower_id, :value => current_user.id%>
+					</div>
+					<div class="field">
+						<%= f.hidden_field :followee_id, :value => user.id%>
+					</div>
+					<div class="actions">
+						<%= f.submit "follow" %>
+					</div>
+				<%end%>
+			</td>
+		<%else%>
+			<td><%= button_to "unfollow", Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).take!, method: :delete %></td>
+		<%end%>
 	<%end%>
+	</tr>
+	<tr>
+		<td>follower</td>
+		<td>followee</td>
+		<% Follower.all.each do |follow| %>
+			<tr> 
+				<td><%=follow.follower.name%></td>
+				<td><%=follow.followee.name%></td>
+			</tr>
+		<%end%>
+	</tr>
 </table>

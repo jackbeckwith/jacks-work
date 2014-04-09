@@ -7,8 +7,9 @@
 		<p>Genre</p>
 		<%= f.text_field :genre %> 
 	</div>
-	<div>
-		<p>Audio File</p>
+    <div class="field">
+		<p>MP3 File</p>
+		<%= f.file_field :audio %>
 	</div>
 	<div class="actions"> 
 		<%= f.submit %>

@@ -3,7 +3,9 @@ MySite::Application.routes.draw do
   root "home#index"
   resources :songs
   resources :users, only: [:index]
+  resources :followers, only: [:create, :destroy]
   get '/users/show/:id', to: 'users#show', as: 'user'
+  get "dashboard", to: "users#dash"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

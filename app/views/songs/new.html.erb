@@ -1,11 +1,15 @@
 <%= form_for(@song) do |f| %> 
 	<div class="field">
-		<p>title</p>
+		<p>Title</p>
 		<%= f.text_field :title %> 
 	</div>
 	<div class="field"> 
-		<p>genre</p>
+		<p>Genre</p>
 		<%= f.text_field :genre %> 
+	</div>
+    <div class="field">
+		<p>MP3 File</p>
+		<%= f.file_field :audio %>
 	</div>
 	<div class="field"> 
 		<p>user</p>

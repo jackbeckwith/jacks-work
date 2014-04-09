@@ -1,0 +1,14 @@
+<h2><%= @user.name%>'s dashboard</h2>
+<div>
+	<h3> Following </h3>
+	<table>
+		<% @followers.each do |follow| %>
+			<tr> 
+				<h4><%=follow.followee.name%></h4>
+				<% @songs.each do |song| %>
+					<td><%=link_to song.title, song_path(song.id) %></td>
+				<%end%>
+			</tr>
+		<%end%>
+	</table>
+</div>

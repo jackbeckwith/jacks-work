@@ -13,4 +13,13 @@ class Notifications < ActionMailer::Base
 
     mail to: song.user.email
   end
+
+  def followed(follow)
+    @greeting = "Hi"
+    @follower = follow.follower.name
+    @followee = follow.followee.name
+    @id = follow.follower_id
+ 
+    mail to: follow.followee.email
+ end
 end

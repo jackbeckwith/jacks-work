@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 1.2'
 # Enable authentification of users
 gem 'devise', '3.0'
 
-gem 'aws-s3', :require => 'aws/s3'
+gem 'paperclip', '~> 4.1'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @songs = Song.where(user_id: @user.id)
   end
 
   def update
@@ -38,6 +39,20 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
+
+def dash
+  if user_signed_in?
+    @user = current_user
+    @followers = Follower.where(follower_id: current_user.id)
+    @follower_id = []
+    @followers.each do |follow|
+      @follower_id.push(follow.followee_id)
+     end
+    @songs = Song.where({user_id: @follower_id}).order(created_at: :desc).limit(5)
+  else 
+    redirect_to users_path
+  end
+end
 
   private
 

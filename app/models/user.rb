@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-	has_many :songs, :dependent => :destroy
+  has_many :songs, :dependent => :destroy
+  has_many :followers, :dependent => :destroy
   validates :name, presence: true
   passwordFormatValidation = /\d+/
   validates :password, format: {with: passwordFormatValidation} 

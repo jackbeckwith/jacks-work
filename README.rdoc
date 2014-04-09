@@ -1,6 +1,9 @@
 Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
-This week I added a Heroku Addon to my app - SendGrid. Now when a user uploads a new song, he receives an email confirming that the track was saved. The email also contains a link which, when clicked, routes the user to the song's page with all its details. I plan to also implement another AddOn called PandaStream, in order to enable users to upload videos to their account.
+This week I put in a lot of work on my app. First, I altered the songs table so that a new column, "audio," would be stored with each new song created. This "audio" attribute corresponds to the actual mp3 file associated with the song. Now when you click on the "Upload Song" tab, you'll notice that there's a spot to attach a file. I implemented that feature by using Ruby's paperclip gem and adding a file_field to the form for creating/editing songs. Pretty cool huh? Next step is to build a playback feature, but for now I'm only able to store mp3's with my app.
 
-I struggled slightly making the link work that takes the user from the confirmation email to the new song page. I talked to Jenny, and she suggested that I distance the period from the link by one space. That seemed to solve things.
+Next I built out the "following" feature, so that users can highlight other users that they find particularly interesting. They now receive an email when anybody starts following them. The long-term goal is to add to the users table, such that I gather more information on them that can be used in "recommending" who to follow. That will be rolled out in the next few weeks.
+
+For the homework this week, I added the following five queries:
+3 .where()'s, 1 .order(), and 1 .limit(). The first .where() appears in app/views/users/index as a .where() query to determine whether a user has already started following another user. If so, the query doesn't present the user with the option to follow them again. The next query in the show function of the user controller, which shows only the songs attributed to a particular user. The last three queries were used to order the appearance of songs on a user's dashboard, to ensure that the first 5 songs from all followees are included.
 
