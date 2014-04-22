@@ -4,8 +4,10 @@ MySite::Application.routes.draw do
   resources :songs
   resources :users, only: [:index]
   resources :followers, only: [:create, :destroy]
-  get '/users/show/:id', to: 'users#show', as: 'user'
+  get "/users/show/:id", to: "users#show", as: "user"
   get "dashboard", to: "users#dash"
+  post "search", to: "application#search"
+  get "songs/genre/:gen", to: "songs#gen_index", as: "gen_songs"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

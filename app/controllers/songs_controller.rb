@@ -55,6 +55,11 @@ class SongsController < ApplicationController
   def upload
   end
 
+  def gen_index
+    @songs = Song.where(genre: params[:gen])
+    render 'songs/index'
+  end
+
   private
 
   def songs_params
@@ -62,3 +67,4 @@ class SongsController < ApplicationController
   end
 
 end
+

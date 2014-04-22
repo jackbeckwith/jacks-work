@@ -20,10 +20,28 @@
 				<% end %>
 				<div class="text-link">
 					<li><%=link_to "Create New User", new_user_registration_path %></li>	
-					<li><%=link_to "View All Users", users_path%></li>
+					<li><%=link_to "People to Follow", users_path%></li>
 					<li><%=link_to "Upload New Song", new_song_path%></li>
 					<li><%=link_to "My Dashboard", dashboard_path%> </li>
+					<li><%=link_to "Edit My Account", edit_user_registration_path%> </li>
 				</div>
+				<li>
+					<%= form_tag search_path, method: :post do%>
+						<%= text_field_tag :search %>
+						<%= select_tag(:type, options_for_select([['Song Title', "title"], ['Music Genre', 'genre'], ["User Email", "email"], ["Username", "name"]])) %>
+						<%= submit_tag "Search"%>
+					<% end %>
+				</li>
+				<li class='dropdown'>
+					<ul>
+						<li><%= link_to "Hip-Hop/Rap", gen_songs_path("Hip-Hop/Rap") %></li>
+						<li><%= link_to "Rock", gen_songs_path("Rock") %></li>
+						<li><%= link_to "Electronic", gen_songs_path("Electronic") %></li>
+						<li><%= link_to "Trap", gen_songs_path("Trap") %></li>
+						<li><%= link_to "Alternative", gen_songs_path("Alternative") %></li>
+						<li><%= link_to "Jazz", gen_songs_path("Jazz") %></li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 		<div id="content">
