@@ -15,27 +15,26 @@
 //= require turbolinks
 //= require_tree .
 
+var oldText;
+
 $(function(){
-	$("#new-user").hover(function(){
-		var oldText = $(this).text();
-  		$(this).text(oldText + " - Give it a try!");
-  	});
+	$("#new-user").hover(
+		function(){
+			oldText = $(this).text();
+  			$(this).text(oldText + " - Don't Be Shy!");
+  			$("#new-user").css("font-weight", "bold")
+  	},
+       function() {
+          $(this).text(oldText);
+          $("#new-user").css("font-weight", "normal")
+    });
 });
 
 $(function(){
-	$("#new-user").hover(function(){
-		$("#new-user").css("color", "white");
+	$("#text-link").hover(function(){
+		$("#text-link").css("color", "white");
+	},
+		function(){
+			$("#text-link").css("color", "rgb(200,200,200)")
 	});
 });
-
-$(function(){
-	$(".text-link").hover(function(){
-		$(".text-link").css("font-size", "17px");
-	});
-});
-
-//$(function(){
-//	$("#dropdown").click(function(){
-//		$(".dropdown").css({border: 1, border-radius: 2, border-color: white})
-//	});
-//});

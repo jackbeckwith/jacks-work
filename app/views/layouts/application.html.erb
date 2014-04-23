@@ -11,34 +11,35 @@
 			<ul class="nav">
 				<div class="text-link">
 					<% if user_signed_in? %>
-						<li class="sign-in">
+						<li class="right-side">
 							<%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
 						</li>
 					<% else %>
-						<li class="sign-in">
+						<li class="right-side">
 							<%= link_to("Login", new_user_session_path) %>
 						</li>
 					<% end %>
-					<li id="new-user"><%=link_to "Create New User", new_user_registration_path %></li>
+					<li class="right-side" id="new-user"><%=link_to "Create New User", new_user_registration_path %></li>
+					<li class="right-side">
+						<%= form_tag search_path, method: :post do%>
+							<%= text_field_tag :search %>
+							<%= select_tag(:type, options_for_select([['Song Title', "title"], ['Music Genre', 'genre'], ["User Email", "email"], ["Username", "name"]])) %>
+							<%= submit_tag "Search"%>
+						<% end %>
+					</li>
 					<% if user_signed_in? %>
-						<li><%= link_to "People to Follow", users_path %></li>
-						<li><%=link_to "Upload New Song", new_song_path%></li>
-						<li><%=link_to "My Dashboard", dashboard_path%> </li>
-						<li><%=link_to "Edit My Account", edit_user_registration_path%> </li>
+						<li class="left-side" ><%= link_to "People to Follow", users_path %></li>
+						<li class="left-side"><%=link_to "Upload New Song", new_song_path%></li>
+						<li class="left-side"><%=link_to "My Dashboard", dashboard_path%> </li>
+						<li class="left-side"><%=link_to "Edit My Account", edit_user_registration_path%> </li>
 					<% end %>
 				</div>
-				<li>
-					<%= form_tag search_path, method: :post do%>
-						<%= text_field_tag :search %>
-						<%= select_tag(:type, options_for_select([['Song Title', "title"], ['Music Genre', 'genre'], ["User Email", "email"], ["Username", "name"]])) %>
-						<%= submit_tag "Search"%>
-					<% end %>
-				</li>
 			</ul>
 		</div>
 		<div class="footer">
  			<ul class="foot">
 				<div class='dropdown'>
+					<li id="collab">Start Collabing in...</li>
 					<li><%= link_to "Rap", gen_songs_path("Rap") %></li>
 					<li><%= link_to "Rock", gen_songs_path("Rock") %></li>
 					<li><%= link_to "Electronic", gen_songs_path("Electronic") %></li>
