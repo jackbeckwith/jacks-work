@@ -20,13 +20,10 @@ var oldText;
 $(function(){
 	$("#new-user").hover(
 		function(){
-			oldText = $(this).text();
-  			$(this).text(oldText + " - Don't Be Shy!");
-  			$("#new-user").css("font-weight", "bold")
+  			$("#new-user").css("color", "white")
   	},
        function() {
-          $(this).text(oldText);
-          $("#new-user").css("font-weight", "normal")
+          $("#new-user").css("color", "rgb(200,200,200)")
     });
 });
 
