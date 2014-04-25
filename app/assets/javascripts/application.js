@@ -16,22 +16,21 @@
 //= require_tree .
 
 var oldText;
+var oldFont;
 
 $(function(){
-	$("#new-user").hover(
+	$("#new-user :first-child").hover(
 		function(){
-  			$("#new-user").css("color", "white")
+			oldText = $(this).text();
+  			$(this).text(oldText + " - Try It!");
+  			$("#new-user").css("font-weight", "bold");
+  			$("#new-user").css("font-size", "17px");
+  			$("#new-user").css("color", "white");
   	},
        function() {
-          $("#new-user").css("color", "rgb(200,200,200)")
+           $(this).text(oldText);
+           $("#new-user").css("font-weight", "normal");
+           $("#new-user").css("font-size", "13px");
+           $("#new-user").css("color", "rgb(200,200,200");
     });
-});
-
-$(function(){
-	$("#text-link").hover(function(){
-		$("#text-link").css("color", "white");
-	},
-		function(){
-			$("#text-link").css("color", "rgb(200,200,200)")
-	});
 });
