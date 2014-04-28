@@ -31,6 +31,6 @@ $(function(){
            $(this).text(oldText);
            $("#new-user").css("font-weight", "normal");
            $("#new-user").css("font-size", "13px");
-           $("#new-user").css("color", "rgb(200,200,200");
+           $("#new-user").css("color", "rgb(200,200,200)");
     });
 });
