@@ -7,6 +7,12 @@
   			<%= csrf_meta_tags %>
 	</head>
 	<body>
+		<script src="/audiojs/audio.min.js"></script>
+		<script>
+  			audiojs.events.ready(function() {
+    		var as = audiojs.createAll();
+  		});
+		</script>
 		<div class="navbar">
 			<ul class="nav">
 				<div class="text-link">

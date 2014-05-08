@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 1.2'
 # Enable authentification of users
 gem 'devise', '3.0'
 
-gem 'paperclip', '~> 4.1'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

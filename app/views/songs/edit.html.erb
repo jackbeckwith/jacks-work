@@ -1,4 +1,4 @@
-<%= form_for(@song) do |f| %> 
+<%= form_for @song, :html => { :multipart => true } do |f| %> 
 	<div class="field">
 		<p>Title</p>
 		<%= f.text_field :title %> 

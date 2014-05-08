@@ -23,7 +23,6 @@ $(function(){
 		function(){
 			oldText = $(this).text();
   			$(this).text(oldText + " - Try It!");
-  			$("#new-user").css("font-weight", "bold");
   			$("#new-user").css("font-size", "17px");
   			$("#new-user").css("color", "white");
   	},

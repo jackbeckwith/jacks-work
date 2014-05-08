@@ -1,9 +1,4 @@
 <table> 
-	<tr>
-		<td>Title</td> 
-		<td>Genre</td> 
-		<td>User</td>
-	</tr>
 	<% @songs.each do |song| %> 
 	<tr>
 		<td><%= link_to song.title, song_path(song.id) %></td>
@@ -11,7 +6,7 @@
 		<td><%= song.user.name unless song.user.nil? %></td>
 		<td><%= link_to "Edit Song", edit_song_path(song.id) %> </td>
 		<td><%= link_to "Destroy Song", song, confirm: "Are you sure you want to delete this song?", method: :delete %> 
-</td>
+		<td><%= song.audio %></td>
 	</tr>
 	<%end%> 
 </table>
