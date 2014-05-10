@@ -4,7 +4,19 @@ My app, "Collab With Me," is intended as a resource for promising musicians who 
 
 I have may validations in my user, song, and follower models. In User model, I validate that the user has provided a name when signing-up and also that his or her password follows a particular format. As for Songs, I check that the song has a title, genre, and audio attachment. For followers, I ensure that you can't follow somebody more than once.
 
-I included one Heroku Add-on in my app called SendGrid. SendGrid enabled me to send emails to users of my app in two instances - when they either uploaded a new song or received a new follower. An email from "info@collabwithme.com" is sent to the email they used to register. Here's the documentation: https://devcenter.heroku.com/articles/sendgrid.
+I use a number of queries as well. There are two in my app/assets/views/users/index.html.erb code:
+
+@users = (current_user.blank? ? User.all : User.find(:all, :conditions => ["id != ?", current_user.id])) -> to save all users who are not the current user and their respective attributes.
+
+<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %> -> to determine whether or not a given user has followed another already.
+
+I also have a query in both my User and Song controllers:
+@songs = Song.where(user_id: @follower_id).order(created_at: :desc).limit(5) -> to store the most recent five songs posted by a given followee of the logged-in user.
+@songs = Song.where(genre: params[:gen]) -> to enable search on the various song parameters
+
+I wrote a javaScript function called resize() which you can find in application.js. It makes sure that, as the window is resized, the navigation bar and footer visible and proportional. Before doing so, the content on the page was stretching from top to bottom and lying on top of the toolbars. This function helped fix that problem. I also used a built-in javaScript library, audio.js, to enable streaming of mp3s.
+
+I included one Heroku Add-on in my app called SendGrid. SendGrid enabled me to send emails to users of my app in two instances - when they either uploaded a new song or received a new follower. An email from "info@collab.com" is sent to the email they used to register. Here's the documentation: https://devcenter.heroku.com/articles/sendgrid.
 
 I used two different gems in my app. The first was the devise gem, which enabled easy management of user sign-ups, sign-ins, and account edits. I provide the link to devise's documentation here: https://github.com/plataformatec/devise. 
 
