@@ -4,7 +4,7 @@ class Song < ActiveRecord::Base
   validates :genre, presence: true
   has_attached_file :audio,
   :url => "/system/:class/:attachment/:id/:style/:basename.:extension",
-  :path => ":rails_root/public/system/:class/:attachment/:id/:style/:basename.:extension"
+  :path => "http://thawing-temple-3343.herokuapp.com/public/system/:class/:attachment/:id/:style/:basename.:extension"
 
   validates_attachment_presence :audio
   validates_attachment_content_type :audio, :content_type => ['application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3'],
