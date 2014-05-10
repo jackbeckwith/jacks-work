@@ -2,6 +2,8 @@ Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
 My app, "Collab With Me," is intended as a resource for promising musicians who want to collaborate with others. Once you create your account, you can upload your own music, find other users to follow, and find all your favorite songs on your dashboard. With the help of audio.js, a drop-in javascript library that uses HTML5's <audio> tag, I've enabled the user to play uploaded songs in the browser. You can also use various search mechanisms (by genre, title, etc) to find prospective people to collaborate with. 
 
+I have may validations in my user, song, and follower models. In User model, I validate that the user has provided a name when signing-up and also that his or her password follows a particular format. As for Songs, I check that the song has a title, genre, and audio attachment. For followers, I ensure that you can't follow somebody more than once.
+
 I included one Heroku Add-on in my app called SendGrid. SendGrid enabled me to send emails to users of my app in two instances - when they either uploaded a new song or received a new follower. An email from "info@collabwithme.com" is sent to the email they used to register. Here's the documentation: https://devcenter.heroku.com/articles/sendgrid.
 
 I used two different gems in my app. The first was the devise gem, which enabled easy management of user sign-ups, sign-ins, and account edits. I provide the link to devise's documentation here: https://github.com/plataformatec/devise. 

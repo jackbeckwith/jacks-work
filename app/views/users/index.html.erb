@@ -12,23 +12,25 @@
 			<li class="user-name"><%= user.name %></li>
 			<li class="hometown"><%= user.hometown %></li>
 			<li class="music_style"><%= user.style %></li>
-			<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %>
-				<li class="button">
-					<%= form_for(Follower.new) do |f| %>
-						<div class="field">
-							<%= f.hidden_field :follower_id, :value => current_user.id%>
-						</div>
-						<div class="field">
-							<%= f.hidden_field :followee_id, :value => user.id%>
-						</div>
-						<div class="actions" class="follow-btn">
-							<%= f.submit "follow" %>
-						</div>
-					<%end%>
-				</li>
-			<%else%>
-				<li class="button"><%= button_to "unfollow", Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).take!, method: :delete %>
-				</li>
+			<% if user_signed_in? %>
+				<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %>
+					<li class="button">
+						<%= form_for(Follower.new) do |f| %>
+							<div class="field">
+								<%= f.hidden_field :follower_id, :value => current_user.id%>
+							</div>
+							<div class="field">
+								<%= f.hidden_field :followee_id, :value => user.id%>
+							</div>
+							<div class="actions" class="follow-btn">
+								<%= f.submit "follow" %>
+							</div>
+						<%end%>
+					</li>
+				<%else%>
+					<li class="button"><%= button_to "unfollow", Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).take!, method: :delete %>
+					</li>
+				<%end%>
 			<%end%>
 		</ul>
 		<% @songs = user.songs %>
