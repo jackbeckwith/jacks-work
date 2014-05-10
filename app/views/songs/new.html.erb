@@ -1,30 +1,28 @@
 <%= form_for @song, :html => { :multipart => true } do |f| %> 
-	<div class="field">
-		<p>Title</p>
-		<%= f.text_field :title %> 
-	</div>
-	<div class="field"> 
-		<p>Genre</p>
-		<%= f.text_field :genre %> 
-	</div>
-    <div class="field">
-		<p>MP3 File</p>
-		<%= f.file_field :audio %>
-	</div>
-	<div class="field"> 
-		<p>user</p>
-		<%= f.hidden_field :user_id, :value => current_user.id %> 
-	</div>
-	<div class="actions"> 
-		<%= f.submit %>
-	</div> 
-    <div class="error-msg"> 
-		<% if @song.errors.any? %> 
-		<ul> 
-			<% @song.errors.full_messages.each do |msg| %> 
-			<li><%= msg %></li>
- 			<% end %> 
- 		</ul> 
+	<div class="form">
+		<h2>Create New Song</h2>
+		<div class="field">Title
+			<%= f.text_field :title %> 
+		</div>
+		<div class="field">Genre
+			<%= f.select :genre, options_for_select([["Rap", "Rap"], ["Rock", "Rock"], ["Electronic", "Electronic"], ["Trap", "Trap"], ["Alternative", "Alternative"], ["Jazz", "Jazz"]]) %> 
+		</div>
+    	<div class="field">MP3 File
+			<%= f.file_field :audio %>
+		</div>
+		<div class="field"> 
+			<%= f.hidden_field :user_id, :value => current_user.id %> 
+		</div>
+		<div class="button2"> 
+			<%= f.submit %>
+		</div> 
+    	<div class="error-msg"> 
+			<% if @song.errors.any? %> 
+			<ul> 
+				<% @song.errors.full_messages.each do |msg| %> 
+					<li><%= msg %></li>
+ 				<% end %> 
+ 			</ul> 
  		<% end %> 
 	</div> 
 <% end %>

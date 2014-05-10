@@ -11,25 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-var oldText;
-var oldFont;
-
 $(function(){
-	$("#new-user :first-child").hover(
-		function(){
-			oldText = $(this).text();
-  			$(this).text(oldText + " - Try It!");
-  			$("#new-user").css("font-size", "17px");
-  			$("#new-user").css("color", "white");
-  	},
-       function() {
-           $(this).text(oldText);
-           $("#new-user").css("font-weight", "normal");
-           $("#new-user").css("font-size", "13px");
-           $("#new-user").css("color", "rgb(200,200,200)");
-    });
+  resize();
+  $(window).on("resize", function(){
+    resize();
+  })
+  function resize(){
+      var height = $(window).height();
+      var nav_height = $(".navbar").height();
+      var foot_height = $(".footer").height();
+      var content_height = height - nav_height - foot_height - 100;
+      $("#content").height(content_height);
+  }
 });

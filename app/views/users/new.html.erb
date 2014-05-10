@@ -1,11 +1,19 @@
 <%= form_for(@user) do |f| %>
 	<div class="field">
-		<p>name</p>
+		<p>Name</p>
 		<%= f.text_field :name%>
 	</div>
 	<div class="field">
-		<p>email</p>
+		<p>Email</p>
 		<%= f.text_field :email%>
+	</div>
+	<div>
+		<p>Hometown</p>
+		<%= f.text_field :hometown%>
+	</div>
+	<div>
+		<p>Music Style</p>
+		<%= f.text_field :style%>
 	</div>
 	<div class="field">
 		<p>password</p>

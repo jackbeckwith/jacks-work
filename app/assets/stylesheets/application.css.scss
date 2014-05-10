@@ -3,6 +3,7 @@ body{
 	font-family: avenir next;
 	font-size: 13px;
 	line-height: 32px;
+	overflow: hidden;
 }
 
 
@@ -19,6 +20,7 @@ li{
 
 .nav{
 	position: fixed;
+	top: 0px;
 	width: 100%;
 	height: 20px;
 	background-color: rgb(10,15,10);
@@ -78,23 +80,147 @@ li{
  	color: white;
  }
 
-.content{
+#content {
 	position: relative;
-	width: 572px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 10px;
-	top: 20px;
+	top: 45px;
+	overflow: scroll;
+	padding-bottom: 50px;
 }
 
-.content a{
-	text-decoration: none;
-	color: #000;
+#title{
+	margin-top: 100px;
+	margin-bottom: 50px;
+	text-align: center;
+	color: rgb(50,50,50);
+	font-size: 100px;
+}
+
+#description{
+	text-align: center;
 	font-size: 20px;
 }
 
-#content {
-	position: absolute;
-	top: 75px;
+#logo{
+	text-align: center;
+ 	padding-top: 30px;
+ }
+
+.button input{
+ 	width: 71px;
+ 	height: 30px;
+ 	color: white;
+ 	font-family: arial,sans-serif;
+ 	font-weight: bold;
+ 	font-size: 13px;
+ 	background-image: -webkit-linear-gradient(top, rgb(67, 135, 253), rgb(70, 131, 234));
+ 	border: 1px;
+ 	border-color: #4285f4;
+ 	border-radius: 2px;
+ }
+
+.button2 input{
+ 	width: 100px;
+ 	height: 30px;
+ 	color: white;
+ 	font-family: arial,sans-serif;
+ 	font-weight: bold;
+ 	font-size: 13px;
+ 	background-image: -webkit-linear-gradient(top, rgb(67, 135, 253), rgb(70, 131, 234));
+ 	border: 1px;
+ 	border-color: #4285f4;
+ 	border-radius: 2px;
+ 	margin-top: 30px;
+ }
+
+.button3 input{
+ 	width: 71px;
+ 	height: 30px;
+ 	color: white;
+ 	font-family: arial,sans-serif;
+ 	font-weight: bold;
+ 	font-size: 13px;
+ 	background-image: -webkit-linear-gradient(top, rgb(67, 135, 253), rgb(70, 131, 234));
+ 	border: 1px;
+ 	border-color: #4285f4;
+ 	border-radius: 2px;
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
+ }
+
+.button4 input{
+ 	width: 150px;
+ 	height: 30px;
+ 	color: white;
+ 	font-family: arial,sans-serif;
+ 	font-weight: bold;
+ 	font-size: 13px;
+ 	background-color: rgb(200,0,0);
+ 	border: 10px;
+ 	border-color: black;
+ 	border-radius: 3px;
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
+ }
+
+
+.user-name {
+	font-size: 24px;
+	font-weight: bold;
+	padding-left: 10px;
 }
 
+.hometown {
+	color: rgb(80,80,80);
+	font-size: 16px;
+}
+
+.music_style {
+	color: rgb(80,80,80);
+	font-size: 16px;
+}
+
+.songs {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 60px;
+}
+
+.song-title {
+	font-size: 20px;
+}
+
+.song-user {
+	color: rgb(100,100,100);
+	font-size: 18px;
+}
+
+
+.users_list li{
+	display: inline-block;
+	padding-bottom: 30px;
+}
+
+.edit-destroy a{
+	text-decoration: none;
+	color: black;
+}
+
+.edit-destroy a:hover{
+	color: rgb(0,0,200);
+}
+
+.field {
+	font-size: 18px;
+	padding-top: 15px;
+}
+
+.form {
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 30px;
+}
+
+.form1 {
+	text-align: center;
+	padding-left: 30px;
+}

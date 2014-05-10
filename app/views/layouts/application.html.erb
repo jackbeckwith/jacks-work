@@ -7,12 +7,6 @@
   			<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<script src="/audiojs/audio.min.js"></script>
-		<script>
-  			audiojs.events.ready(function() {
-    		var as = audiojs.createAll();
-  		});
-		</script>
 		<div class="navbar">
 			<ul class="nav">
 				<div class="text-link">
@@ -25,7 +19,9 @@
 							<%= link_to("Login", new_user_session_path) %>
 						</li>
 					<% end %>
-					<li class="right-side" id="new-user"><%=link_to "Create New User", new_user_registration_path %></li>
+					<% if !user_signed_in? %>
+						<li id="left-side"><%=link_to "Create New User", new_user_registration_path %></li>
+					<% end %>
 					<li class="right-side">
 						<%= form_tag search_path, method: :post do%>
 							<%= text_field_tag :search %>
@@ -42,6 +38,14 @@
 				</div>
 			</ul>
 		</div>
+
+
+		<div id="content">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		<%= yield %>
+	    </div>
+
 		<div class="footer">
  			<ul class="foot">
 				<div class="genres">
@@ -54,11 +58,5 @@
 					<li><%= link_to "Jazz", gen_songs_path("Jazz") %></li>
 				</div>
 			</ul>
-				</li>
-		<div id="content">
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
-		<%= yield %>
-	    </div>
 	</body>
 </html>

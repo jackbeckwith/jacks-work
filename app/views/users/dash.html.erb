@@ -1,14 +1,26 @@
-<h2><%= @user.name%>'s dashboard</h2>
-<div>
-	<h3> Following </h3>
-	<table>
-		<% @followers.each do |follow| %>
-			<tr> 
-				<h4><%=follow.followee.name%></h4>
-				<% @songs.each do |song| %>
-					<td><%=link_to song.title, song_path(song.id) %></td>
-				<%end%>
-			</tr>
-		<%end%>
-	</table>
-</div>
+<script src="/audio.min.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
+
+<p class="user-name">Your Music</p>
+<% @your_music = Song.where(user_id: current_user) %>
+	<% @your_music.each do |song| %> 
+		<ul class="songs">
+			<li class="song-title"><%= song.title %></li>
+			<li class="edit-destroy"><%= link_to "Edit Song", edit_song_path(song.id) %></li>
+			<li class="edit-destroy"><%= link_to "Delete Song", song, confirm: "Are you sure you want to delete this song?", method: :delete %></li>
+			<li><audio src= <%= song.audio %> preload="auto" /></audio></li> 
+		</ul>
+	<% end %> 
+
+<p class="user-name">Music From Your Favorites</p>
+		<% @songs.each do |song| %> 
+				<ul class="songs">
+				<li class="song-title"><%= song.title %></li>
+				<li class="song-user"> <%= song.user.name unless song.user.nil? %></li>
+				<li><audio src= <%= song.audio %> preload="auto" /></audio></li> 
+			</ul>
+		<% end %>

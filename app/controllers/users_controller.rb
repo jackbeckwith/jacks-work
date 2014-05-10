@@ -48,7 +48,7 @@ def dash
     @followers.each do |follow|
       @follower_id.push(follow.followee_id)
      end
-    @songs = Song.where({user_id: @follower_id}).order(created_at: :desc).limit(5)
+    @songs = Song.where(user_id: @follower_id).order(created_at: :desc).limit(5)
   else 
     redirect_to users_path
   end

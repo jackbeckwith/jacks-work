@@ -1,7 +1,7 @@
 class FollowersController < ApplicationController
   def create
- 	@follower = Follower.new(follower_params)
- 	if @follower.save
+ 	  @follower = Follower.new(follower_params)
+ 	  if @follower.save
       Notifications.followed(@follower).deliver
       redirect_to users_path
     else

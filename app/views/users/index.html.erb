@@ -1,31 +1,41 @@
-<table>
-	<tr>
-		<td>Name</td>
-		<td>Email</td>
-	</tr>
-	<% @users = (current_user.blank? ? User.all : User.find(:all, :conditions => ["id != ?", current_user.id])) %>
+<script src="/audio.min.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
+
+<% @users = (current_user.blank? ? User.all : User.find(:all, :conditions => ["id != ?", current_user.id])) %>
+	
 	<% @users.each do |user| %>
-	<tr>
-		<td><%= link_to user.name, user_path(user.id) %></td>
-		<td><%= user.email %></td>
-		<td><%= user.password %></td>
-		<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %>
-			<td>
-				<%= form_for(Follower.new) do |f| %>
-					<div class="field">
-						<%= f.hidden_field :follower_id, :value => current_user.id%>
-					</div>
-					<div class="field">
-						<%= f.hidden_field :followee_id, :value => user.id%>
-					</div>
-					<div class="actions">
-						<%= f.submit "follow" %>
-					</div>
-				<%end%>
-			</td>
-		<%else%>
-			<td><%= button_to "unfollow", Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).take!, method: :delete %></td>
-		<%end%>
+		<ul class="users_list">
+			<li class="user-name"><%= user.name %></li>
+			<li class="hometown"><%= user.hometown %></li>
+			<li class="music_style"><%= user.style %></li>
+			<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %>
+				<li class="button">
+					<%= form_for(Follower.new) do |f| %>
+						<div class="field">
+							<%= f.hidden_field :follower_id, :value => current_user.id%>
+						</div>
+						<div class="field">
+							<%= f.hidden_field :followee_id, :value => user.id%>
+						</div>
+						<div class="actions" class="follow-btn">
+							<%= f.submit "follow" %>
+						</div>
+					<%end%>
+				</li>
+			<%else%>
+				<li class="button"><%= button_to "unfollow", Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).take!, method: :delete %>
+				</li>
+			<%end%>
+		</ul>
+		<% @songs = user.songs %>
+			<% @songs.each do |song| %> 
+				<ul class="songs">
+					<li class="song-title"><%= song.title %></li>
+					<li><audio src= <%= song.audio %> preload="auto" /></audio></li> 
+				</ul>
+			<%end%> 
 	<%end%>
-	</tr>
-</table>

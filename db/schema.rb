@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406175258) do
+ActiveRecord::Schema.define(version: 20140509070027) do
 
   create_table "followers", force: true do |t|
     t.integer  "follower_id"
@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(version: 20140406175258) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "audio"
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
   end
 
   add_index "songs", ["user_id"], name: "index_songs_on_user_id"
@@ -50,6 +53,8 @@ ActiveRecord::Schema.define(version: 20140406175258) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "hometown"
+    t.string   "style"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
