@@ -1,5 +1,11 @@
 Link to my Heroku page: http://thawing-temple-3343.herokuapp.com/
 
-This week I added search functionality to my app. Along the nav-bar you'll notice a search box that can comb through my database in search of the submitted term(s). You can specifically search through song title's, genres, user's names and emails by using the dropdown menu at the right. Along the bottom, there are also links that bring you immediately to a genre-specific list of songs.
+My app, "Collab With Me," is intended as a resource for promising musicians who want to collaborate with others. Once you create your account, you can upload your own music, find other users to follow, and find all your favorite songs on your dashboard. With the help of audio.js, a drop-in javascript library that uses HTML5's <audio> tag, I've enabled the user to play uploaded songs in the browser. You can also use various search mechanisms (by genre, title, etc) to find prospective people to collaborate with. 
 
-I tried for a very long time to ge my JavaScript working, but it still has its glitches. I've implemented song functionality along the nav-bar such that the links change color and increase in font size when hovered over. Ulimately I'd like to use jQuery to add more features to the footer, such that when a specific genre is clicked, there is a border added around the given link. That is a project for the week to come.
+I included one Heroku Add-on in my app called SendGrid. SendGrid enabled me to send emails to users of my app in two instances - when they either uploaded a new song or received a new follower. An email from "info@collabwithme.com" is sent to the email they used to register. Here's the documentation: https://devcenter.heroku.com/articles/sendgrid.
+
+I used two different gems in my app. The first was the devise gem, which enabled easy management of user sign-ups, sign-ins, and account edits. I provide the link to devise's documentation here: https://github.com/plataformatec/devise. 
+
+I also incorporated a gem called Paperclip to make file-uploading easier. With Paperclip's help, you can upload a song locally from your computer to the app. Paperclip ensures that it's in mp3 format it stores it as a string in the song table. Here's a link to documentation: https://github.com/thoughtbot/paperclip.
+
+Overall, this has been an incredibly rewarding experience. Thanks to Jenny and all the TAs for a wonderful job this semester!
