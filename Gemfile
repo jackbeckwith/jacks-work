@@ -39,6 +39,8 @@ gem 'devise', '3.0'
 
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
+gem 'aws-sdk'
+
 gem 'jquery-turbolinks'
 
 group :doc do
