@@ -12,7 +12,7 @@ GIT
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
+      cocaine (0.3.2)
       mime-types
 
 GEM
