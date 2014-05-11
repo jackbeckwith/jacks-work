@@ -13,6 +13,7 @@ group :production do
 end
 
 
+gem "cocaine", "0.3.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
